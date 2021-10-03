@@ -1,6 +1,6 @@
 {
   "name": "jsonash",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "utility functions for json",
   "main": "src/index.js",
   "scripts": {
@@ -17,9 +17,17 @@
   },
   "keywords": [
     "npm",
-    "Apollo",
-    "GraphQL",
-    "Typescript"
+    "json",
+    "jsonash",
+    "sort",
+    "replace",
+    "camel case",
+    "pascal case",
+    "snake case",
+    "json sort",
+    "replace keys",
+    "validate json",
+    "validate"
   ],
   "author": "nikhilunni <nikhi.unni@gmail.com>",
   "license": "MIT",
