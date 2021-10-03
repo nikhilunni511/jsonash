@@ -10,6 +10,10 @@ To install the GraphQL CLI tool:
 $ npm install --save jsonash
 ```
 
+## Contents
+
+1. [Sort](#Sort-object-based-on-key)
+
 ## Usage/Examples
 
 Import jsonash into your file like below:
