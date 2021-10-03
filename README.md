@@ -12,7 +12,12 @@ $ npm install --save jsonash
 
 ## Contents
 
-1. [Sort](#Sort-object-based-on-key)
+1. [Sort array of objects](#1-sort-object-based-on-key)
+2. [To convert all the keys to camelCase](#2-to-convert-all-the-keys-to-camelcase)
+3. [To convert all the keys to snake_Case](#3-to-convert-all-the-keys-to-snake_case)
+4. [To convert all the keys to PascalCase](#4-to-convert-all-the-keys-to-pascalcase)
+5. [To replace a key from the object](#5-to-replace-a-key-from-the-object)
+6. [To validate a JSON object](#6-to-validate-a-json-object)
 
 ## Usage/Examples
 
@@ -22,7 +27,7 @@ Import jsonash into your file like below:
 const jsonash = require("jsonash");
 ```
 
-##### 1. Sort object based on key
+### 1. Sort object based on key
 
 ```javascript
 const obj = [
@@ -42,7 +47,7 @@ Output:
 
 The parameter path is required that defines the depth of the object to be sorted.
 
-##### 2. To convert all the keys to camelCase
+### 2. To convert all the keys to camelCase
 
 ```javascript
 const obj = {
@@ -76,7 +81,7 @@ Output:
 */
 ```
 
-##### 3. To convert all the keys to snake_Case
+### 3. To convert all the keys to snake_Case
 
 ```javascript
 const obj = { firstName: "John", lastName: "John", phoneNumber: 999555 };
@@ -106,7 +111,7 @@ Output:
 */
 ```
 
-##### 4. To convert all the keys to PascalCase
+### 4. To convert all the keys to PascalCase
 
 ```javascript
 const obj = {
@@ -140,7 +145,7 @@ Output:
 */
 ```
 
-##### 4. To replace a key from the object
+### 5. To replace a key from the object
 
 ```javascript
 const obj = {
@@ -178,7 +183,7 @@ Output:
 */
 ```
 
-##### 4. To validate a JSON object
+### 6. To validate a JSON object
 
 ```javascript
 const obj = { last_name: '12345', phone_number: 999555, is_admin: 'true' };
