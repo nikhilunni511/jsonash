@@ -176,7 +176,7 @@ const objArray = [
   { first_name: "Michael", last_name: "Michael", phone_number: 456 },
   { user: { first_name: "Alice", last_name: "Alice", phone_number: 789 } },
 ];
-jsonash.toCamelCase(objArray);
+jsonash.formatKeys(objArray, customMethod);
 
 /*
 Output:
