@@ -165,7 +165,7 @@ jsonash.formatKeys(obj, customMethod);
 
 /*
 Output: 
-{ FirstName: 'John', LastName: 'John', PhoneNumber: 999555 }
+{ first_nameTEST: "John", last_nameTEST: "John", phone_numberTEST: 999555 },
 */
 
 /* You can pass array of objects to the method */
