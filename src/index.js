@@ -127,6 +127,24 @@ const validate = (obj, options) => {
   return (err.error && err) || true;
 };
 
+const formatKey = (obj, cb) => {
+  const obj1 = {};
+  Object.keys(obj).map((item) => {
+    if (typeof obj[item] === "object" && obj[item] !== null) {
+      obj1[cb(item)] = formatKey(obj[item], cb);
+    } else {
+      obj1[cb(item)] = obj[item];
+    }
+  });
+  return obj1;
+};
+
+const formatKeys = (obj, cb) => {
+  return Array.isArray(obj)
+    ? obj.map((item) => formatKey(item, cb))
+    : formatKey(obj, cb);
+};
+
 module.exports = {
   sort,
   toCamelCase,
@@ -134,4 +152,5 @@ module.exports = {
   toPascalCase,
   replacetKeys,
   validate,
+  formatKeys,
 };

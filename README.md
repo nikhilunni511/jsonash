@@ -4,7 +4,7 @@ Utility functions for JSON objects
 
 ## Installation
 
-To install the GraphQL CLI tool:
+To install module:
 
 ```
 $ npm install --save jsonash
@@ -16,8 +16,9 @@ $ npm install --save jsonash
 2. [To convert all the keys to camelCase](#2-to-convert-all-the-keys-to-camelcase)
 3. [To convert all the keys to snake_Case](#3-to-convert-all-the-keys-to-snake_case)
 4. [To convert all the keys to PascalCase](#4-to-convert-all-the-keys-to-pascalcase)
-5. [To replace a key from the object](#5-to-replace-a-key-from-the-object)
-6. [To validate a JSON object](#6-to-validate-a-json-object)
+5. [Format key with custom function](#5-format-key-with-custom-function)
+6. [To replace a key from the object](#6-to-replace-a-key-from-the-object)
+7. [To validate a JSON object](#7-to-validate-a-json-object)
 
 ## Usage/Examples
 
@@ -145,7 +146,50 @@ Output:
 */
 ```
 
-### 5. To replace a key from the object
+### 5. Format key with custom function
+
+```javascript
+const obj = {
+  first_name: "John",
+  last_name: "John",
+  phone_number: 999555,
+};
+
+function customMethod(str) {
+  return str + "TEST";
+}
+
+/*The second argument must be a function and it takes a string as input and return string as output
+ */
+jsonash.formatKeys(obj, customMethod);
+
+/*
+Output: 
+{ FirstName: 'John', LastName: 'John', PhoneNumber: 999555 }
+*/
+
+/* You can pass array of objects to the method */
+
+const objArray = [
+  { first_name: "John", last_name: "John", phone_number: 999555 },
+  { first_name: "Mike", last_name: "Mike", phone_number: 123 },
+  { first_name: "Michael", last_name: "Michael", phone_number: 456 },
+  { user: { first_name: "Alice", last_name: "Alice", phone_number: 789 } },
+];
+jsonash.toCamelCase(objArray);
+
+/*
+Output:
+[
+    { first_nameTEST: "John", last_nameTEST: "John", phone_numberTEST: 999555 },
+    { first_nameTEST: 'Mike', last_nameTEST: 'Mike', phone_numberTEST: 123 },
+    { first_nameTEST: 'Michael', last_nameTEST: 'Michael', phone_numberTEST: 456 },
+    { userTEST: { first_nameTEST: 'Alice', last_nameTEST: 'Alice', phone_numberTEST: 789 } }
+];
+*/
+```
+
+### 6. To replace a key from the object
 
 ```javascript
 const obj = {
@@ -183,7 +227,7 @@ Output:
 */
 ```
 
-### 6. To validate a JSON object
+### 7. To validate a JSON object
 
 ```javascript
 const obj = { last_name: '12345', phone_number: 999555, is_admin: 'true' };
